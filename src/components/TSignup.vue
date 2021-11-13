@@ -1,14 +1,14 @@
 <template>
   <div class="TSignup">
-    <m-signup-form />
+    <o-signup-card />
   </div>
 </template>
 
 <script>
-import MSignupForm from "./MSignupForm";
+import OSignupCard from "./OSignupCard";
 
 export default {
-  components: { MSignupForm },
+  components: { OSignupCard },
   name: "TSignup"
 }
 </script>
