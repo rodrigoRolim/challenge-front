@@ -55,6 +55,8 @@ export default {
   width: auto;
   flex: 1;
   padding: 0.5rem 0rem;
+  font-family: Quicksand;
+  font-size: 0.9rem;
   &:first-child {
     border-top-left-radius: inherit;
   }
