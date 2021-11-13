@@ -1,85 +1,119 @@
 <template>
-  <a-card class="MSignupForm">
-    <m-stepper 
-      :steps="steps" 
-      color="primary" 
-      class="MSignup__Stepper" 
-      :currentStep="currentStep"
-      @select-step="updateCurrentStep" 
-    />
-    <form class="MSignupForm__Form">
+  <form class="MSignupForm__Form">
+    <div class="MSignupForm__Main">
       <div v-show="currentStep === 0">
-        <a-input label="nome" class="MSignupForm__Input MSignup--margin" />
+        <a-input 
+          label="nome" 
+          class="MSignupForm__Input MSignup--margin"
+          v-model="name"
+        />
         <a-input label="e-mail" class="MSignupForm__Input MSignup--margin" />
         <a-input label="cpf" class="MSignupForm__Input MSignup--margin" />
         <a-input label="pis" class="MSignupForm__Input MSignup--margin" />
-     </div>
-     <div v-show="currentStep === 1">
-        <a-input 
-          label="cep" 
-          class="MSignupForm__Input MSignup__MinorInput MSignup--margin" 
-        />
-        <div class="MSignup__GroupInput MSignup--margin">
-          <a-input label="país" class="MSignupForm__Input MSignup__MinorInput " />
-          <a-input label="estado" class="MSignupForm__Input MSignup__MinorInput " />
-        </div>
-        <a-input label="rua" class="MSignupForm__Input MSignup--margin" />
-        <div class="MSignup__GroupInput MSignup--margin">
-          <a-input label="número" class="MSignupForm__Input MSignup__MinorInput " />
-          <a-input label="complemento" class="MSignupForm__Input MSignup__MinorInput " />
-        </div>
-     </div>
-     <div v-show="currentStep === 2">
+      </div>
+      <div v-show="currentStep === 1">
+          <a-input 
+            label="cep" 
+            class="MSignupForm__Input MSignup__MinorInput MSignup--margin" 
+          />
+          <div class="MSignup__GroupInput MSignup--margin">
+            <a-select label="país" class="MSignupForm__Input MSignup__MinorInput" 
+              :options="[{ id:0,value:'bunda mole' }, {id:1,value:'idiota'} ,{id:2, value:'fraco' }]" />
+            <a-select label="estado" class="MSignupForm__Input MSignup__MinorInput" />
+          </div>
+          <a-input label="rua" class="MSignupForm__Input MSignup--margin" />
+          <div class="MSignup__GroupInput MSignup--margin">
+            <a-input label="número" class="MSignupForm__Input MSignup__MinorInput " />
+            <a-input label="complemento" class="MSignupForm__Input MSignup__MinorInput " />
+          </div>
+      </div>
+      <div v-show="currentStep === 2">
         <a-input label="senha" class="MSignupForm__Input MSignup--margin" />
-     </div>
-     
-    </form>
-  </a-card>  
+        <a-input label="confirmar senha" class="MSignupForm__Input MSignup--margin" />
+      </div>
+    </div>
+    <div class="MSignupForm__Footer">
+      <a-button
+      class="MSignupForm__Button"
+      @click.prevent.stop="prevCurrentStep" 
+      text="voltar" 
+      color="secondary"
+    />
+      <a-button
+      class="MSignupForm__Button"
+      @click.prevent.stop="nextCurrentStep" 
+      :text="toggleButtonText" 
+      color="primary"
+    />
+    </div>
+  </form>
 </template>
 
 <script>
-import ACard from "./ACard";
+import AButton from './AButton.vue';
 import AInput from "./AInput";
-import MStepper from "./MStepper";
+import ASelect from "./ASelect";
+
 export default {
-  name: "OSignupForm",
+  name: "MSignupForm",
+  props: {
+    currentStep: {
+      type: Number
+    },
+    stepsNumber: {
+      type: Number
+    }
+  },
+
   data() {
     return {
-      currentStep: 0,
-      steps: ['usuário', 'endereço', 'senha']
+      name: ''
+    }
+  },
+  computed: {
+    toggleButtonText() {
+      return (this.currentStep !== this.stepsNumber - 1) ? 'continuar' : 'confirmar';
     }
   },
   components: {
-    ACard,
+    AButton,
     AInput,
-    MStepper
+    ASelect,
   },
   methods: {
-    updateCurrentStep(i) {
-      this.currentStep = i;
+    nextCurrentStep() {
+      this.$emit("next-step");
+      
+    },
+    prevCurrentStep() {
+      this.$emit("prev-step");
     }
   }
 }
 </script>
 
 <style lang="scss" scoped>
-.MSignupForm {
+
+.MSignupForm__Form {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 940px;
-}
-.MSignup__Stepper {
-  border-top-left-radius: 1rem;
-  border-top-right-radius: 1rem;
-}
-.MSignupForm__Form {
   width: 600px;
   padding: 1rem 0;
 }
+.MSignupForm__Main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 60vh;
+}
 .MSignupForm__Input {
   width: 100%;
+}
+.MSignupForm__Footer {
+  display: flex;
+  align-self: center;
+  justify-content: space-between;
+  width: 310px;
 }
 .MSignup__MinorInput {
   max-width: 290px;
