@@ -1,5 +1,5 @@
 <template>
-  <form class="MSignupForm__Form">
+  <form class="MSignupForm__Form" >
     <div class="MSignupForm__Main">
       <div v-show="currentStep === 0">
         <a-input 
@@ -34,17 +34,18 @@
     </div>
     <div class="MSignupForm__Footer">
       <a-button
-      class="MSignupForm__Button"
-      @click.prevent.stop="prevCurrentStep" 
-      text="voltar" 
-      color="secondary"
-    />
+        class="MSignupForm__Button"
+        @click.prevent="prevCurrentStep"
+        :disabled="currentStep === 0"
+        text="voltar" 
+        color="secondary"
+      />
       <a-button
-      class="MSignupForm__Button"
-      @click.prevent.stop="nextCurrentStep" 
-      :text="toggleButtonText" 
-      color="primary"
-    />
+        class="MSignupForm__Button"
+        @click.prevent="nextCurrentStep" 
+        :text="toggleButtonText" 
+        color="primary"
+      />
     </div>
   </form>
 </template>
