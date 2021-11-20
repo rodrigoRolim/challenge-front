@@ -7,6 +7,11 @@ const routes = [
     component: () => import(/* webpackChunkName: "about" */ '../views/Signup.vue')
   },
   {
+    path: '/dados',
+    name: 'Profile',
+    component: () => import(/* webpackChunkName: "UserEdit" */ '../views/Profile.vue')
+  },
+  {
     path: '/ola-usuario',
     name: 'Home',
     component: () => import(/* webpackChunkName: "Home" */ '../views/Home.vue')
