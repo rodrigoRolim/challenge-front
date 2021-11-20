@@ -26,6 +26,22 @@ export default {
   name: "MNavUnlogged",
   components: {
     AButton
+  },
+  computed: {
+    isSignupPage() {
+      return this.$route.name == "Signup";
+    },
+    isLoginPage() {
+      return this.$route.name == "Login";
+    }
+  },
+  methods: {
+    redirectToLogin() {
+      this.$router.push("/login");
+    },
+    redirectToSignup() {
+      this.$router.push("/cadastro");
+    }
   }
 }
 </script>
