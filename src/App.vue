@@ -36,7 +36,7 @@ export default {
   position: fixed;
   width: 100%;
   padding: 0.5rem 2rem;
-  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.25);
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
   background-color: #fafafa;
   a {
     font-weight: bold;
