@@ -1,7 +1,21 @@
 <template>
-  <router-view/>
+  <div class="App__Navbar">
+    <m-navbar />
+  </div>
+  <div class="App__Main">
+    <router-view />
+  </div>
 </template>
+<script>
+import MNavbar from "@/components/MNavbar";
 
+export default {
+  name: "App",
+  components: {
+    MNavbar
+  }
+}
+</script>>
 <style lang="scss">
 * {
   margin: 0;
@@ -18,9 +32,12 @@
   overflow: auto;
 }
 
-#nav {
-  padding: 30px;
-
+.App__Navbar {
+  position: fixed;
+  width: 100%;
+  padding: 0.5rem 2rem;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.25);
+  background-color: #fafafa;
   a {
     font-weight: bold;
     color: #2c3e50;
