@@ -1,17 +1,17 @@
 <template>
-  <nav class="MNavbar">
+  <nav class="ONavbar">
     
   </nav>
 </template>
 
 <script>
 export default {
-  name: "MNavbar"
+  name: "ONavbar"
 }
 </script>
 
 <style scoped>
-.MNavbar {
+.ONavbar {
   display: flex;
   width: 100%;
   justify-content: flex-end;

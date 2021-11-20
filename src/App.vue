@@ -1,18 +1,18 @@
 <template>
   <div class="App__Navbar">
-    <m-navbar />
+    <o-navbar />
   </div>
   <div class="App__Main">
     <router-view />
   </div>
 </template>
 <script>
-import MNavbar from "@/components/MNavbar";
+import ONavbar from "@/components/ONavbar";
 
 export default {
   name: "App",
   components: {
-    MNavbar
+    ONavbar
   }
 }
 </script>>
