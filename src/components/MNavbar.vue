@@ -17,5 +17,4 @@ export default {
   justify-content: flex-end;
   min-height: 40px;
 }
-
 </style>
