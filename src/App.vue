@@ -47,4 +47,7 @@ export default {
     }
   }
 }
+.App__Main {
+  min-height: 100vh;
+}
 </style>
