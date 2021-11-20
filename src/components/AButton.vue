@@ -115,8 +115,16 @@ $bcolor: #fafafa;
 .AButton--outlined {
   background-color: #fafafa;
   &.AButton--primary {
-    color: #00308F;
     border: 1px solid  #00308F;
+    color: #00308F;
+  }
+  &.AButton--secondary {
+    border: 1px solid firebrick;
+    color: firebrick
+  }
+  &.AButton--success {
+    border: 1px solid #5fc95b;
+    color: #5fc95b
   }
 }
 </style>
