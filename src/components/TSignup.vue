@@ -17,5 +17,7 @@ export default {
 .TSignup {
   display: flex;
   justify-content: center;
+  align-items: center;
+  margin-top: 1rem;
 }
 </style>
