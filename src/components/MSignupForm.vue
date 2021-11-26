@@ -17,8 +17,7 @@
             class="MSignupForm__Input MSignup__MinorInput MSignup--margin" 
           />
           <div class="MSignup__GroupInput MSignup--margin">
-            <a-select label="país" class="MSignupForm__Input MSignup__MinorInput" 
-              :options="[{ id:0,value:'bunda mole' }, {id:1,value:'idiota'} ,{id:2, value:'fraco' }]" />
+            <a-select label="país" class="MSignupForm__Input MSignup__MinorInput" />
             <a-select label="estado" class="MSignupForm__Input MSignup__MinorInput" />
           </div>
           <a-input label="rua" class="MSignupForm__Input MSignup--margin" />
