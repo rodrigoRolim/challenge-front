@@ -1,25 +1,25 @@
 <template>
   <div class="TProfile">
-    <o-user-datas-card />
-    <o-user-address-card />
-    <o-user-password-card />
+    <o-profile />
   </div>
 </template>
 
 <script>
-import OUserDatasCard from "./OUserDatasCard";
-import OUserAddressCard from "./OUserAddressCard";
-import OUserPasswordCard from "./OUserPasswordCard";
+import OProfile from "./OProfile";
+
 export default {
   name: "TProfile",
   components: {
-    OUserAddressCard,
-    OUserDatasCard,
-    OUserPasswordCard
+    OProfile
   }
 }
 </script>
 
 <style lang="scss" scoped>
-
+.TProfile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 5rem;
+}
 </style>
