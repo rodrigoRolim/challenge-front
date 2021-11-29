@@ -1,9 +1,9 @@
 <template>
-  <a-card class="MSignupForm">
+  <a-card class="OSignupForm">
     <m-stepper 
       :steps="steps" 
       color="primary" 
-      class="MSignup__Stepper" 
+      class="OSignup__Stepper" 
       :currentStep="currentStep"
       @select-step="selectCurrentStep" 
     />
@@ -22,7 +22,7 @@ import MSignupForm from "./MSignupForm";
 import MStepper from "./MStepper";
 
 export default {
-  name: "MSignupCard",
+  name: "OSignupCard",
   data() {
     return {
       currentStep: 0,
@@ -52,7 +52,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.MSignupForm {
+.OSignupForm {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -60,7 +60,7 @@ export default {
   width: 940px;
   min-height: 80vh;
 }
-.MSignup__Stepper {
+.OSignup__Stepper {
   border-top-left-radius: 1rem;
   border-top-right-radius: 1rem;
 }
