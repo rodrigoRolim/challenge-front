@@ -1,12 +1,30 @@
 <template>
   <nav class="ONavbar">
-    
+    <component v-bind:is="getNavigationPainel" />
   </nav>
 </template>
 
 <script>
+import MNavLogged from "./MNavLogged";
+import MNavUnlogged from "./MNavUnlogged.vue";
 export default {
-  name: "ONavbar"
+  name: "ONavbar",
+  components: {
+    MNavLogged,
+    MNavUnlogged
+  },
+  computed: {
+    getNavigationPainel() {
+      const isSignPages = this.isSignPages();
+      
+      return isSignPages ? 'MNavUnlogged' : 'MNavLogged';
+    }
+  },
+  methods: {
+    isSignPages() {
+      return this.$route.name == "Login" || this.$route.name == "Signup";
+    }
+  }
 }
 </script>
 
