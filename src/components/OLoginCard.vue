@@ -47,6 +47,9 @@ export default {
   }
 }
 .OLoginCard__SignupRedirect {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   width: 95%;
   border-top: 1px solid rgb(206, 203, 203);
   padding: 1rem 1rem;
