@@ -57,6 +57,7 @@ export default {
   padding: 0.5rem 0rem;
   font-family: Quicksand;
   font-size: 0.9rem;
+  text-align: center;
   &:first-child {
     border-top-left-radius: inherit;
   }
