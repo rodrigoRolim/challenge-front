@@ -2,7 +2,7 @@
   <button 
     class="AButton"
     :class="getClasses"
-    @click="$emit('click', $event)"
+    @click="click"
   >
     {{ text }}
   </button>
@@ -59,6 +59,11 @@ export default {
         },
         'AButton--' + this.color
       ]
+    }
+  },
+  methods: {
+    click(event) {
+      this.$emit('click', event);
     }
   }
 }
