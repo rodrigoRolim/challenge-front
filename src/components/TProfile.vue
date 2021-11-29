@@ -21,5 +21,6 @@ export default {
   flex-direction: column;
   align-items: center;
   padding-top: 5rem;
+  width: 940px;
 }
 </style>
