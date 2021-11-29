@@ -17,8 +17,10 @@ export default {
 <style lang="scss" scoped>
 .TLogin {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 2rem;
+  min-height: calc(100vh - 57px);
+  margin-top: 3rem;
 }
 </style>

@@ -15,5 +15,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
+.Profile {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 </style>

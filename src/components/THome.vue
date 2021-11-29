@@ -19,9 +19,9 @@ export default {
 <style lang="scss" scoped>
 .THome {
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  min-height: 100vh;
+  align-items: center;
+  min-height: calc(100vh - 57px);
+  margin-top: 3rem;;
 }
 </style>

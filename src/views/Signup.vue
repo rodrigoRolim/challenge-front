@@ -1,5 +1,5 @@
 <template>
-  <div class="Login">
+  <div class="Signup">
     <t-signup />
   </div>
 </template>
@@ -16,8 +16,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.Login {
-  padding: 4rem 1rem 1rem 0rem;
-  min-height: calc(100vh - 1rem);
+.Signup {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 </style>
