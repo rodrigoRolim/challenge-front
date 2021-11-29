@@ -1,17 +1,20 @@
 <template>
-  <div class="MUserPasswordCard">
-    <p>**********</p>
+  <div class="OUserPasswordCard">
+
   </div>
 </template>
 
 <script>
 export default {
-  name: "MUserPasswordCard",
+  name: "OUserPassword",
+  components: {
+
+  }
 }
 </script>
 
 <style lang="scss" scoped>
-.MUserPasswordCard {
+.OUserPasswordCard {
   padding: 0rem 1rem;
 }
 </style>
