@@ -4,7 +4,8 @@ module.exports = {
       scss:{
         prependData: () => {
           let __fonts = `@import "@/styles/__fonts.scss";`;
-          return __fonts;
+          let __design = `@import "@/styles/__design.scss";`;
+          return __fonts + __design;
         }
       }
     }
