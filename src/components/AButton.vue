@@ -15,8 +15,9 @@ export default {
     color: {
       type: String,
       validator: function(value) {
-        return ['primary', 'secondary', 'success'].indexOf(value) !== -1
-      }
+        return ['primary', 'secondary', 'success', 'brand', 'default'].indexOf(value) !== -1
+      },
+      default() { return "default" }
     },
     big: {
       type: Boolean
@@ -91,6 +92,10 @@ $bcolor: #fafafa;
 .AButton--default {
   padding: 0.6rem 2.5rem;
 }
+.AButton--brand {
+  background-color: #6D6E71;
+  color: #fafafa;
+}
 .AButton--primary {
   background-color: #00308F;
   color: #fafafa;
@@ -107,7 +112,7 @@ $bcolor: #fafafa;
   width: 100%;
 }
 .AButton--xSmall {
-  padding: 0.3rem 1.5rem;
+  padding: 0.3rem 1rem;
   font-size: 0.9rem;
 }
 .AButton--disabled {
