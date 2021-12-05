@@ -2,14 +2,7 @@
   <form class="MSignupForm__Form" >
     <div class="MSignupForm__Main">
       <div v-show="currentStep === 0">
-        <a-input 
-          label="nome" 
-          class="MSignupForm__Input MSignup--margin"
-          v-model="name"
-        />
-        <a-input label="e-mail" class="MSignupForm__Input MSignup--margin" />
-        <a-input label="cpf" class="MSignupForm__Input MSignup--margin" />
-        <a-input label="pis" class="MSignupForm__Input MSignup--margin" />
+        <m-user-inputs />
       </div>
       <div v-show="currentStep === 1">
           <a-input 
@@ -53,6 +46,7 @@
 import AButton from './AButton.vue';
 import AInput from "./AInput";
 import ASelect from "./ASelect";
+import MUserInputs from "./MUserInputs";
 
 export default {
   name: "MSignupForm",
@@ -79,6 +73,7 @@ export default {
     AButton,
     AInput,
     ASelect,
+    MUserInputs,
   },
   methods: {
     nextCurrentStep() {
