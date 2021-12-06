@@ -2,26 +2,13 @@
   <form class="MSignupForm__Form" >
     <div class="MSignupForm__Main">
       <div v-show="currentStep === 0">
-        <m-user-inputs />
+        <m-inputs-user />
       </div>
       <div v-show="currentStep === 1">
-          <a-input 
-            label="cep" 
-            class="MSignupForm__Input MSignup__MinorInput MSignup--margin" 
-          />
-          <div class="MSignup__GroupInput MSignup--margin">
-            <a-select label="país" class="MSignupForm__Input MSignup__MinorInput" />
-            <a-select label="estado" class="MSignupForm__Input MSignup__MinorInput" />
-          </div>
-          <a-input label="rua" class="MSignupForm__Input MSignup--margin" />
-          <div class="MSignup__GroupInput MSignup--margin">
-            <a-input label="número" class="MSignupForm__Input MSignup__MinorInput " />
-            <a-input label="complemento" class="MSignupForm__Input MSignup__MinorInput " />
-          </div>
+        <m-inputs-address />
       </div>
       <div v-show="currentStep === 2">
-        <a-input label="senha" class="MSignupForm__Input MSignup--margin" />
-        <a-input label="confirmar senha" class="MSignupForm__Input MSignup--margin" />
+        <m-inputs-password />
       </div>
     </div>
     <div class="MSignupForm__Footer">
@@ -43,10 +30,10 @@
 </template>
 
 <script>
-import AButton from './AButton.vue';
-import AInput from "./AInput";
-import ASelect from "./ASelect";
-import MUserInputs from "./MUserInputs";
+import AButton from "./AButton.vue";
+import MInputsAddress from "./MInputsAddress";
+import MInputsPassword from "./MInputsPassword";
+import MInputsUser from "./MInputsUser";
 
 export default {
   name: "MSignupForm",
@@ -71,9 +58,9 @@ export default {
   },
   components: {
     AButton,
-    AInput,
-    ASelect,
-    MUserInputs,
+    MInputsAddress,
+    MInputsPassword,
+    MInputsUser,
   },
   methods: {
     nextCurrentStep() {
@@ -101,24 +88,12 @@ export default {
   justify-content: center;
   min-height: 60vh;
 }
-.MSignupForm__Input {
-  width: 100%;
-}
+
 .MSignupForm__Footer {
   display: flex;
   align-self: center;
   justify-content: space-between;
   width: 310px;
 }
-.MSignup__MinorInput {
-  max-width: 290px;
-}
 
-.MSignup__GroupInput {
-  display: flex;
-  justify-content: space-between;
-}
-.MSignup--margin {
-  margin: 1rem 0;
-}
 </style>
