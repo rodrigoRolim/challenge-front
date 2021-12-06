@@ -37,14 +37,6 @@ export default {
   padding: 0.5rem 2rem;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
   background-color: #fafafa;
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
 }
 .App__Main {
   min-height: 100vh;
