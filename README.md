@@ -24,7 +24,10 @@ npm run test:unit
 ```
 npm run lint
 ```
-
+### Execute unit tests
+```
+npm run test:unit
+```
 ### execution on production mode by Docker Compose
 
 ```
