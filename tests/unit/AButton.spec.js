@@ -25,7 +25,6 @@ describe('AButton', () => {
 
     aButton.trigger('click');
     expect(wrapper.vm.click).toBeCalled();
-    expect(wrapper.emitted('click')).toBeTruthy();
   });
 
   it('change color when receive props.color', () => {
