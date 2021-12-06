@@ -5,15 +5,25 @@
     </div>
     <div class="OProfile__Main">  
       <div class="OProfile__UserDatas">
-        <a-icon class="OProfile__EditUser" icon="pencil-alt" :style="{ color: 'gray' }"/>
+        <a-icon 
+          class="OProfile__EditUser" 
+          icon="pencil-alt" 
+          :style="{ color: 'gray' }"
+          @click="tryUpdate('user')"
+        />
         <o-user-datas />
       </div>
       <div class="OProfile__Address">
-        <a-icon class="OProfile__EditAddres" icon="pencil-alt" :style="{ color: 'gray' }"/>
+        <a-icon 
+          class="OProfile__EditAddres" 
+          icon="pencil-alt" 
+          :style="{ color: 'gray' }"
+          @click="tryUpdate('address')"
+        />
         <o-user-address />
       </div>
       <div class="OProfile__Password">
-        <o-user-password />
+        <o-user-password @open-editer-password="tryUpdate('password')" />
       </div>
     </div>
   </a-card>
@@ -32,6 +42,11 @@ export default {
     OUserAddress,
     OUserDatas,
     OUserPassword
+  },
+  methods: {
+    tryUpdate(beingUpdated) {
+      this.$emit('open-editer', beingUpdated);
+    }
   }
 }
 </script>
@@ -70,5 +85,8 @@ export default {
     align-self: flex-end;
     cursor: pointer;
   }
+}
+.OProfile__Password {
+  padding-top: 2rem;
 }
 </style>
