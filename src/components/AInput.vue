@@ -1,7 +1,6 @@
 <template>
-
-  <label class="Ainput" :class="{ 'Ainput--error': error }">
-    <div class="Ainput__Labels">
+  <label class="AInput" :class="{ 'AInput--error': error }">
+    <div class="AInput__Labels">
       <span>{{ label }}</span>
       <small v-if="error">*{{error}}</small>
     </div>
@@ -12,7 +11,6 @@
       spellcheck="false" 
     />
   </label> 
-
 </template>
 
 <script>
@@ -40,7 +38,7 @@ export default {
 <style lang="scss" scoped>
 $color-error:  #aa0000;
 
-.Ainput {
+.AInput {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -60,16 +58,16 @@ $color-error:  #aa0000;
   }
  
 }
-.Ainput--error {
+.AInput--error {
   background-color: #f7b8b8;
   & input {
     color: $color-error
   }
-  & .Ainput__Labels span {
+  & .AInput__Labels span {
     color: $color-error
   }
 }
-.Ainput__Labels {
+.AInput__Labels {
   display: flex;
   & span {
     font-family: Montserrat;
@@ -78,7 +76,7 @@ $color-error:  #aa0000;
     font-size: 0.85rem;
   }
   & small {
-    margin-left: 0.9rem;
+    margin-left: auto;
     font-family: Montserrat;
     color: $color-error;
   }
