@@ -31,5 +31,6 @@ npm run test:unit
 ### execution on production mode by Docker Compose
 
 ```
-docker-compose build -d up
+docker-compose build
+docker-compose up
 ```
